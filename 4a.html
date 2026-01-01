@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Buttons</title>
 </head>
 <body>
     <button>Simon</button>
     <button>Click</button>
-    
+    <p>Hello ,world!
+        Today i went to the grocery store to buy some eggs and vegetables .
+    </p>
+    <button style="background-color: yellow;">Add to Cart</button>
+    <button style="background-color: orange;">Buy Now</button>
+    <div>
+    <p>Adults Plain Cotton T-shirt</p>
+    <p>Price : $7.99</p>
+    <button style="background-color: yellow;" onclick="alert('Added')">Add to Cart</button>
+    <button style="background-color: orange;" onclick=" buynow() ">Buy Now</button>
+    </div>
 </body>
+<script>
+    console.log('Welcome!');
+    function buynow(){
+      alert('Purchased');
+      console.log('Loading....');
+    }
+</script>
 </html>
