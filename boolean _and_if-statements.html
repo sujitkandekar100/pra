@@ -31,11 +31,19 @@
         console.log('you are not able discount ');
        }
        const random = Math.random();
+       let coin_result='';
        if(random<0.5){
-        console.log('head');
+        coin_result='head';
        }
        else{
-        console.log('tails');
+        coin_result='tails';
+       }
+       let guess = 'head';
+       if(coin_result===guess){
+        console.log('You Win!');
+       }
+       else{
+        console.log('you lose!');
        }
     </script>
     
