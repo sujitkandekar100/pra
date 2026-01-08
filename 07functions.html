@@ -20,8 +20,13 @@
             let fahrenheit= (celsius*(9/5))+32;
             console.log(`celsius to fahrenheit:${fahrenheit}`);
         }
-
+        
+        function convertToCelsius(fahrenheit){
+             let celsius= (fahrenheit-32)*5/9;
+            console.log(` fahrenheit to celsius:${celsius}`);
+        }
         convertToFahrenheit(25);
+        convertToCelsius(86);
     </script>
 </body>
 </html>
