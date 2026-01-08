@@ -18,15 +18,28 @@
 
         function convertToFahrenheit(celsius){
             let fahrenheit= (celsius*(9/5))+32;
-            console.log(`celsius to fahrenheit:${fahrenheit}`);
+            console.log(`celsius to fahrenheit:${fahrenheit}F`);
         }
         
         function convertToCelsius(fahrenheit){
              let celsius= (fahrenheit-32)*5/9;
-            console.log(` fahrenheit to celsius:${celsius}`);
+            console.log(` fahrenheit to celsius:${celsius}C`);
+        }
+        function convertTemperature(degree,unit){
+            if(unit==='C'){
+                convertToCelsius(degree);
+            }
+            else if (unit==='F'){
+                convertToFahrenheit(degree);
+            }
+            else{
+                console.log('please enter convert unit of degree.');
+            }
         }
         convertToFahrenheit(25);
         convertToCelsius(86);
+        convertTemperature(82,'F');
+
     </script>
 </body>
 </html>
