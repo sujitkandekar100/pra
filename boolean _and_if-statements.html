@@ -1,54 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>boolean</title>
-</head>
-<body>
+<html>
+  <head></head>
+  <body>
+    <button onclick="
+      playGame('heads');
+    ">heads</button>
+
+    <button onclick="
+      playGame('tails');
+    ">tails</button>
+
     <script>
-      
-      let time = new Date();
-      let hour = time.getHours();
-      const name = 'ganesh';
-    
-      if(6<hour<12){
-        console.log(`Good Morning! ${name}`);
+      // We can use const here since score is a reference
+      // so we can modify it even if it uses const.
+      const score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0
+      };
+
+      function playGame(guess) {
+        const randomNumber = Math.random();
+        const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+        console.log(guess === result ? 'You win!' : 'You lose!');
+
+        if (guess === result) {
+          score.wins++;
+        } else {
+          score.losses++;
+        }
+        console.log(score);
+
+        localStorage.setItem('score', JSON.stringify(score));
       }
-      else if(13<hour<17)
-      {
-        console.log(`Good afternoon! ${name}`);
-      }
-       else{
-        console.log(`Good night! ${name}`);
-       }
-
-       const age =75;
-       let isHoliday = false;
-       if((age<6 || age>65)&& !isHoliday)
-       {
-        console.log('you are able to discount');
-       }
-       else{
-        console.log('you are not able discount ');
-       }
-       const random = Math.random();
-       let coin_result='';
-       if(random<0.5){
-        coin_result='head';
-       }
-       else{
-        coin_result='tails';
-       }
-       let guess = 'head';
-       if(coin_result===guess){
-        console.log('You Win!');
-       }
-       else{
-        console.log('you lose!');
-       }
-
-       guess === coin_result ? console.log('you win!') : console.log('you lose!');
-
     </script>
-    
-</body>
+  </body>
 </html>
