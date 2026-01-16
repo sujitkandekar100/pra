@@ -6,12 +6,23 @@
     <title>Document object model </title>
 </head>
 <body>
-    <button>9a</button>
-    <button class="button-9b">9b</button>
+
+    <div>
+        <p>
+            <button>9a</button>
+            <button class="button-9b">9b</button>
+        </p>
+        <p>
+           <button class="button-head" onclick="document.querySelector('.js-choice').innerHTML='You choose : heads';">heads</button>
+           <button class="button-tails" onclick="document.querySelector('.js-choice').innerHTML='You choose: tails';">tails</button>
+        </p>
+        <p class="js-choice"></p>
+    </div>
     <script>
         const button = document.querySelector('button');
         console.log(button);
         document.querySelector('.button-9b').innerText="9b Done!";
+        
     </script>
 </body>
 </html>
