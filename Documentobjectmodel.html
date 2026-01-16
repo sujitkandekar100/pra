@@ -18,11 +18,16 @@
         </p>
         <p class="js-choice"></p>
         <p>
-            <input class="button-input"/>
+            <input placeholder="Name" class="js-name-input"
+      onkeydown="
+        if (event.key === 'Enter') {
+          // Optional: instead of duplicating this code,
+          // you could also put it in a function.
+        showMessage()
+        }"/>
         </br>
             <button onclick="
-            const inputElement=document.querySelector('.button-input');
-            document.querySelector('.js-name').innerHTML=`Your name is :${inputElement.value}`;">Submit</button>
+           showMessage()">Submit</button>
         </p>
         <p class="js-name"></p>
     </div>
@@ -30,7 +35,11 @@
         const button = document.querySelector('button');
         console.log(button);
         document.querySelector('.button-9b').innerText="9b Done!";
-        
+        function showMessage(){
+              const inputElement = document.querySelector('.js-name-input');
+          document.querySelector('.js-name')
+            .innerHTML = `Your name is: ${inputElement.value}`;
+        }
     </script>
 </body>
 </html>
