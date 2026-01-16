@@ -17,6 +17,14 @@
            <button class="button-tails" onclick="document.querySelector('.js-choice').innerHTML='You choose: tails';">tails</button>
         </p>
         <p class="js-choice"></p>
+        <p>
+            <input class="button-input"/>
+        </br>
+            <button onclick="
+            const inputElement=document.querySelector('.button-input');
+            document.querySelector('.js-name').innerHTML=`Your name is :${inputElement.value}`;">Submit</button>
+        </p>
+        <p class="js-name"></p>
     </div>
     <script>
         const button = document.querySelector('button');
