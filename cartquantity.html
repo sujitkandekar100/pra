@@ -4,10 +4,14 @@
     <title>Cart Quantity</title>
   </head>
   <body>
-    <button onclick="
+
+    <div>
+      <p>
+        <button onclick="
       console.log(`Cart quantity: ${cartQuantity}`);
     ">Show Quantity</button>
-
+      </p>
+      <p>
     <button onclick="
     updateCartQuantity(1)
     ">Add to Cart</button>
@@ -40,13 +44,16 @@
     <button onclick="
    updateCartQuantity(-3)
     ">-3</button>
-
+      </p>
+      <p>
     <button onclick="
       cartQuantity = 0;
       console.log('Cart was reset.');
       console.log(`Cart quantity: ${cartQuantity}`);
     ">Reset Cart</button>
-    
+    </p>
+     <p class="js-cart-quantity-paragraph"></p>
+    </div>
     <script>
       let cartQuantity = 0;
       function updateCartQuantity(value){
@@ -60,9 +67,11 @@
         }
         
             cartQuantity+=value;
+            document.querySelector('.js-cart-quantity-paragraph').innerHTML=`Cart Quantity:$${cartQuantity}`;
             console.log(`cart quantity:${cartQuantity}`);
         
       }
+
     </script>
   </body>
 </html>
