@@ -30,6 +30,10 @@
            showMessage();">Submit</button>
         </p>
         <p class="js-name"></p>
+
+        <input onkeyup="
+        showText()" class="js-input-name"/>
+        <p class="js-input-created"></p>
     </div>
     <script>
         const button = document.querySelector('button');
@@ -39,6 +43,10 @@
         const inputElement = document.querySelector('.js-name-input');
         document.querySelector('.js-name')
         .innerHTML = `Your name is: ${inputElement.value}`;
+        }
+        function showText(){
+         const inputname=document.querySelector('.js-input-name');
+         document.querySelector('.js-input-created').innerHTML=inputname.value;
         }
     </script>
 </body>
