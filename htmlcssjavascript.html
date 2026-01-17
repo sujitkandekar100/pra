@@ -33,14 +33,23 @@
         <button style="background-color: antiquewhite; color: black; border-radius: 10%; padding: 10%;">Schedule for Later</button>
        </p>    
        <button class="js-button1">Test</button>
-       <button class="toggle-button js-button" onclick="
-       const button1= document.querySelector('.toggle-button');
+       <button class="toggle-button toggle-gaming" onclick="
+       const button1= document.querySelector('.toggle-gaming');
        if(!button1.classList.contains('is-toggled')){
         button1.classList.add('is-toggled');
        }
        else{
         button1.classList.remove('is-toggled');
        }">Gaming</button>
+       <button
+        class="toggle-button toggle-music" onclick="
+       const button2= document.querySelector('.toggle-music');
+       if(!button2.classList.contains('is-toggled')){
+        button2.classList.add('is-toggled');
+       }
+       else{
+        button2.classList.remove('is-toggled');
+       }">Music</button>
     </div>
     <script>
      const button = document.querySelector('.js-button1');
