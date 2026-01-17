@@ -16,9 +16,17 @@
     </br>
         <button style="background-color: antiquewhite; color: black; border-radius: 10%; padding: 10%;">Schedule for Later</button>
        </p>    
+       <button class="js-button">Test</button>
     </div>
     <script>
-
+     const button = document.querySelector('.js-button');
+     button.classList.add('new-class');
+     
+     // Check if button has the class 'js-button'
+     const hasClass = button.classList.contains('js-button');
+     console.log(hasClass);
+     const hasClass2 = button.classList.contains('js-button');
+     console.log(hasClass2);
     </script>
 </body>
 </html>
