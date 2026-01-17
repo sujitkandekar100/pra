@@ -1,81 +1,138 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background: #000000;
+        font-family: Arial, sans-serif;
+      }
+      .calculator {
+        background: #1a1a1a;
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        width: 320px;
+      }
+      .display {
+        background-color: #000000;
+        color: #ffffff;
+        font-size: 28px;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: right;
+        margin-bottom: 20px;
+        min-height: 50px;
+        word-wrap: break-word;
+        word-break: break-all;
+        font-weight: bold;
+        border: 2px solid #333333;
+      }
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      button {
+        padding: 15px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.2s ease;
+      }
+      button:hover {
+        transform: scale(1.05);
+      }
+      button:active {
+        transform: scale(0.95);
+      }
+      .number-btn {
+        background-color: #333333;
+        color: #ffffff;
+      }
+      .number-btn:hover {
+        background-color: #444444;
+      }
+      .operator-btn {
+        background-color: #FFD700;
+        color: #000000;
+      }
+      .operator-btn:hover {
+        background-color: #FFC700;
+      }
+      .equals-btn {
+        background-color: #FFD700;
+        color: #000000;
+        grid-column: span 2;
+      }
+      .equals-btn:hover {
+        background-color: #FFC700;
+      }
+      .clear-btn {
+        background-color: #ff4444;
+        color: #ffffff;
+        grid-column: span 2;
+      }
+      .clear-btn:hover {
+        background-color: #ff6666;
+      }
+    </style>
+  </head>
   <body>
-    <div>
-      <p>
-    <button onclick="
-      updateCalculation('1')
-    ">1</button>
-    
-    <button onclick="
-      updateCalculation('2')
-    ">2</button>
-      </p>
-      <p>
-    <button onclick="
-      updateCalculation('3')
-    ">3</button>
+    <div class="calculator">
+      <div class="display js-show-calculations"></div>
+      <div class="buttons">
+        <button class="number-btn" onclick="updateCalculation('7')">7</button>
+        <button class="number-btn" onclick="updateCalculation('8')">8</button>
+        <button class="number-btn" onclick="updateCalculation('9')">9</button>
+        <button class="operator-btn" onclick="updateCalculation('/')">/</button>
 
-    <button onclick="
-      updateCalculation('4')
-    ">4</button>
-     </p>
-      <p>
-    <button onclick="
-      updateCalculation('5')
-    ">5</button>
+        <button class="number-btn" onclick="updateCalculation('4')">4</button>
+        <button class="number-btn" onclick="updateCalculation('5')">5</button>
+        <button class="number-btn" onclick="updateCalculation('6')">6</button>
+        <button class="operator-btn" onclick="updateCalculation('*')">*</button>
 
-    <button onclick="
-      updateCalculation('6')
-    ">6</button>
-     </p>
-      <p>
-    <button onclick="
-      updateCalculation('7')
-    ">7</button>
+        <button class="number-btn" onclick="updateCalculation('1')">1</button>
+        <button class="number-btn" onclick="updateCalculation('2')">2</button>
+        <button class="number-btn" onclick="updateCalculation('3')">3</button>
+        <button class="operator-btn" onclick="updateCalculation('-')">-</button>
 
-    <button onclick="
-      updateCalculation('8')
-    ">8</button>
-     </p>
-      <p>
-    <button onclick="
-      updateCalculation('+')
-    ">+</button>
+        <button class="number-btn" style="grid-column: span 2;" onclick="updateCalculation('0')">0</button>
+        <button class="number-btn" onclick="updateCalculation('.')">.</button>
+        <button class="operator-btn" onclick="updateCalculation('+')">+</button>
 
-    <button onclick="
-      updateCalculation('-')
-    ">-</button>
-     </p>
-      <p>
-    <button onclick="
-      updateCalculation('*')
-    ">*</button>
-
-    <button onclick="
-      updateCalculation('/')
-    ">/</button>
-     </p>
-     <p>
-    <button onclick=" calculation=eval(calculation);
-    document.querySelector('.js-show-calculations').innerHTML=`${calculation}`;
-    console.log(calculation);">=</button>
-
-    <button onclick="
-      calculation = '';
-      console.log(calculation);
-    ">Clear</button>
-    </p>
-    <p class="js-show-calculations"></p>
+        <button class="equals-btn" onclick="calculateResult()">=</button>
+        <button class="clear-btn" onclick="clearCalculation()">Clear</button>
+      </div>
+    </div>
     <script>
       let calculation = '';
       function updateCalculation(value){
-        calculation+=value;
-        document.querySelector('.js-show-calculations').innerHTML=`${calculation}`;
+        calculation += value;
+        document.querySelector('.js-show-calculations').innerHTML = calculation;
         console.log(calculation);
+      }
+      function calculateResult(){
+        try {
+          calculation = eval(calculation);
+          document.querySelector('.js-show-calculations').innerHTML = calculation;
+          console.log(calculation);
+        } catch(error) {
+          document.querySelector('.js-show-calculations').innerHTML = 'Error';
+          calculation = '';
+        }
+      }
+      function clearCalculation(){
+        calculation = '';
+        document.querySelector('.js-show-calculations').innerHTML = '';
+        console.log('Cleared');
       }
     </script>
   </body>
-  </div>
 </html>
