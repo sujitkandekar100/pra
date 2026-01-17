@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -12,6 +17,7 @@
     <input class="js-input" placeholder="Cost Of Order" onkeydown="handleCostKeydown(event);"/>
     <button onclick="calculateTotal();">Calculate</button>
     <p class="js-total-cost"></p>
+    <p class="js-show-error"></p>
     <script>
        function handleCostKeydown(event){
          if(event.key === 'Enter'){
@@ -21,11 +27,21 @@
        function calculateTotal(){
         let inputElement= document.querySelector('.js-input');
         let inputvalue=Number(inputElement.value)*100;
-        if(inputvalue<4000){
+        let errorElement = document.querySelector('.js-show-error');
+        if(0<inputvalue<4000){
             inputvalue=inputvalue+100;
             console.log(typeof(inputvalue));
         }
-        document.querySelector('.js-total-cost').innerHTML=`shiping cost :$${inputvalue/100}`;
+        if(inputvalue<0){
+            errorElement.innerHTML='Error : cost cannot be less than $0 ';
+            errorElement.classList.add('error-message');
+            document.querySelector('.js-total-cost').innerHTML='';
+        }
+        else{
+            errorElement.innerHTML='';
+            errorElement.classList.remove('error-message');
+            document.querySelector('.js-total-cost').innerHTML=`shiping cost :$${inputvalue/100}`;
+        }
        }
     </script>
 </body>
