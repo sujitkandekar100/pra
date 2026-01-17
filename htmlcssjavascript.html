@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .toggle-button {
+        background-color: rgb(230, 230, 230);
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-right: 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .is-toggled {
+        background-color: black;
+        color: white;
+      }
+    </style>
 </head>
 <body>
     <div>
@@ -16,17 +32,23 @@
     </br>
         <button style="background-color: antiquewhite; color: black; border-radius: 10%; padding: 10%;">Schedule for Later</button>
        </p>    
-       <button class="js-button">Test</button>
+       <button class="js-button1">Test</button>
+       <button class="toggle-button js-button" onclick="
+       const button1= document.querySelector('.toggle-button');
+       if(!button1.classList.contains('is-toggled')){
+        button1.classList.add('is-toggled');
+       }
+       else{
+        button1.classList.remove('is-toggled');
+       }">Gaming</button>
     </div>
     <script>
-     const button = document.querySelector('.js-button');
+     const button = document.querySelector('.js-button1');
      button.classList.add('new-class');
      
-     // Check if button has the class 'js-button'
-     const hasClass = button.classList.contains('js-button');
+     // Check if button has the class 'js-button1'
+     const hasClass = button.classList.contains('js-button1');
      console.log(hasClass);
-     const hasClass2 = button.classList.contains('js-button');
-     console.log(hasClass2);
     </script>
 </body>
 </html>
