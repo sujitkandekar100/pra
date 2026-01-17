@@ -23,11 +23,11 @@
         if (event.key === 'Enter') {
           // Optional: instead of duplicating this code,
           // you could also put it in a function.
-        showMessage()
+        showMessage();
         }"/>
         </br>
             <button onclick="
-           showMessage()">Submit</button>
+           showMessage();">Submit</button>
         </p>
         <p class="js-name"></p>
     </div>
@@ -36,9 +36,9 @@
         console.log(button);
         document.querySelector('.button-9b').innerText="9b Done!";
         function showMessage(){
-              const inputElement = document.querySelector('.js-name-input');
-          document.querySelector('.js-name')
-            .innerHTML = `Your name is: ${inputElement.value}`;
+        const inputElement = document.querySelector('.js-name-input');
+        document.querySelector('.js-name')
+        .innerHTML = `Your name is: ${inputElement.value}`;
         }
     </script>
 </body>
