@@ -113,6 +113,22 @@
     }
     minMax([1,-3,5]);
     minMax([-2,3,-5,7,10]);
+    minMax([]);
+    minMax([3]);
+    console.log('+++++++++++++');
+
+    function countWords(words){
+        for(let i=0;i<words.length;i++){
+            let count=0;
+            for(let j=0;j<words.length;j++){
+                if(words[i]===words[j]){
+                    count++;
+                }
+            }
+            console.log(words[i] + ': ' + count);
+        }
+    }
+    countWords(['apple','orange','apple','grapes','orange']);
     </script>
 </body>
 </html>
