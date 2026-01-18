@@ -94,6 +94,25 @@
     }
     countPositive([1,-3,5]);
     countPositive([-2,3,-5,7,10]);
+
+    console.log('//////////////////');
+
+    function minMax(nums){
+        let min=nums[0];
+        let max=nums[0];
+        for(let i=0;i<nums.length;i++){
+            if(nums[i]<min){
+                min=nums[i];
+            }
+            if(nums[i]>max){
+                max=nums[i];
+            }
+            
+        }
+        console.log('min: '+min+' max: '+max);
+    }
+    minMax([1,-3,5]);
+    minMax([-2,3,-5,7,10]);
     </script>
 </body>
 </html>
