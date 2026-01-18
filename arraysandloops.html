@@ -27,11 +27,50 @@
         if(i%2===0){
           console.log(i);
         }
-      }
+      };
 
       for(let i=5;i>0;i--){
         console.log(i);
       };
+     console.log('*****************');
+    let i=0;
+    while(i<10){
+        if(i%2===0){
+           console.log(i);
+        }
+        i++;
+    };
+    console.log('###############');
+    let j=5;
+    while(j>0){
+        console.log(j);
+        j--;
+    };
+    console.log('@@@@@@@@@@@@@@@@@@@');
+    const arrayloop=[1,2,3];
+    for(let i=0;i<arrayloop.length;i++){
+        arrayloop[i]+=1;
+    }
+    console.log(arrayloop);
+    function addOne(array){
+        for(let i=0;i<array.length;i++){
+            array[i]+=1;
+        };
+        return array;
+    };
+    addOne(arrayloop);
+    addOne([-2,-1,0,99]);
+    function addNum(array,num){
+        for(let i=0;i<array.length;i++){
+            array[i]+=num;
+        }
+        return array;
+    }
+    addNum([1,2,3],2);
+    addNum([1,2,3],3);
+    addNum([-2,-1,0,99],2);
+    
+
     </script>
 </body>
 </html>
