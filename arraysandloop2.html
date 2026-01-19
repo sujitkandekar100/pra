@@ -7,12 +7,12 @@
 </head>
 <body>
     <script>
-     let index=-1;
-     /*const arraywords=['hello','world','search','good'];*/
-     const arraywords=['not','found'];
+     let index=0;
+     const arraywords=['hello','world','search','good','search'];
+     //const arraywords=['not','found'];
      for(let i=0;i<arraywords.length;i++){
         if(arraywords[i]=== 'search'){
-            index=i;
+            index++;
         }
      }
       console.log(index);
