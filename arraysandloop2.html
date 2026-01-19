@@ -16,7 +16,19 @@
         }
      }
       console.log(index);
-      
+      console.log('******************');
+      function findIndex(array,word){
+          let index2 = -1;
+          for(let i=0;i<array.length;i++){
+            if(word===array[i]){
+                index2++;
+            }
+          }
+          console.log(index2);
+      }
+      findIndex(['green','red','blue','red'],'red');
+      findIndex(['green','red','blue','red'],'yellow');
+
     </script>
 </body>
 </html>
