@@ -7,6 +7,8 @@
 </head>
 <body>
        <button class="js-finish-button" onclick="finish()">Finish</button>
+       <button class="js-button-cart" onclick="addcart()">Add to Cart</button>
+       <p class="js-paragraph-cart"></p>
     <script>
         const add= function () {
             console.log(2+3);
@@ -31,7 +33,17 @@
             setTimeout(()=>{
              button.innerHTML='Finshed!';
             },5000);
+        };
+
+        function addcart(){
+            const messageParagraph=document.querySelector('.js-paragraph-cart');
+            messageParagraph.innerHTML='Added';
+            setTimeout(() => {
+                messageParagraph.innerHTML='';
+            }, 2000);
+            
         }
+        
     </script>
 </body>
 </html>
