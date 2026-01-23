@@ -48,8 +48,10 @@
           
         };
         let messageNumber=2;
-        setInterval(()=>{
-            if(document.title ="advancefunction"){
+        if(messageNumber>0)
+        {
+            setInterval(()=>{
+            if(document.title ==="advancefunction"){
                 document.title=`${messageNumber} advancefunction`;
             }
             else{
@@ -57,6 +59,11 @@
             }
             
         },1000);
+        }
+        else{
+            document.title='advancefunction';
+        }
+       
        
         
     </script>
