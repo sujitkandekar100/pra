@@ -26,9 +26,11 @@
             console.log('12b');
         });
         function finish(){
+            const button = document.querySelector('.js-finish-button');
+            button.innerHTML='Loading';
             setTimeout(()=>{
-             document.querySelector('.js-finish-button').innerHTML='Finshed!';
-            },3);
+             button.innerHTML='Finshed!';
+            },5000);
         }
     </script>
 </body>
