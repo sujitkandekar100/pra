@@ -35,15 +35,18 @@
             },5000);
         };
          let timeoutId;
-        function addcart(){
+         function addcart(){
             const messageParagraph=document.querySelector('.js-paragraph-cart');
             messageParagraph.innerHTML='Added';
             clearTimeout(timeoutId);
-         timeoutId= setTimeout(()=>{
-         messageParagraph.innerHTML='';
-        },2000);
-            
-        }
+          timeoutId= setTimeout(()=>{
+          messageParagraph.innerHTML='';
+         },2000);
+          
+        };
+        setInterval(()=>{
+            document.title='new message';
+        },1000);
        
         
     </script>
