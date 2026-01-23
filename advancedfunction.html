@@ -34,15 +34,17 @@
              button.innerHTML='Finshed!';
             },5000);
         };
-
+         let timeoutId;
         function addcart(){
             const messageParagraph=document.querySelector('.js-paragraph-cart');
             messageParagraph.innerHTML='Added';
-            setTimeout(() => {
-                messageParagraph.innerHTML='';
-            }, 2000);
+            clearTimeout(timeoutId);
+         timeoutId= setTimeout(()=>{
+         messageParagraph.innerHTML='';
+        },2000);
             
         }
+       
         
     </script>
 </body>
