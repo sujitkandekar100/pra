@@ -9,6 +9,9 @@
        <button class="js-finish-button" onclick="finish()">Finish</button>
        <button class="js-button-cart" onclick="addcart()">Add to Cart</button>
        <p class="js-paragraph-cart"></p>
+       <br>
+       <button onclick="messageNumber++">Add</button>
+       <button onclick="messageNumber--">remove</button>
     <script>
         const add= function () {
             console.log(2+3);
@@ -44,8 +47,15 @@
          },2000);
           
         };
+        let messageNumber=2;
         setInterval(()=>{
-            document.title='new message';
+            if(document.title ="advancefunction"){
+                document.title=`${messageNumber} advancefunction`;
+            }
+            else{
+                document.title=`advancefunction`;
+            }
+            
         },1000);
        
         
