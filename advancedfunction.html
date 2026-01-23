@@ -13,6 +13,18 @@
         };
         add();
         add();
+        function runTwice(fun) {
+            fun();
+            fun();
+        }
+        
+        // Test runTwice with the add function
+        runTwice(add);
+        
+        // Test runTwice with an anonymous function
+        runTwice(function () {
+            console.log('12b');
+        });
     </script>
 </body>
 </html>
