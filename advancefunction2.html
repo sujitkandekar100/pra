@@ -6,6 +6,8 @@
     <title>advanceFuntion2</title>
 </head>
 <body>
+    <button class="js-button">Click Me</button>
+    <p>Count: <span class="js-count">0</span></p>
 
     <script>
       /*const multiply=(a,b)=>{
@@ -43,6 +45,17 @@
         });
       }
       console.log(removeEgg(['egg','bacon','egg','toast','egg']));
+
+      // addEventListener goes here - after DOM elements exist
+      let count = 0;
+      const button = document.querySelector('.js-button');
+      const countDisplay = document.querySelector('.js-count');
+      
+      button.addEventListener('click', () => {
+        count++;
+        countDisplay.textContent = count;
+        console.log(`Button clicked ${count} times`);
+      });
     </script>
 </body>
 </html>
