@@ -14,6 +14,21 @@
       const multiply=(a,b)=>a*b;
       console.log(multiply(2,3));
       console.log(multiply(7,10));
+      let positivenumber=0;
+      function countPositive(nums){
+               nums.forEach(num => {
+                if(num>0){
+                   positivenumber++;
+                }
+                else{
+                    positivenumber--;
+                }
+               });
+                               return positivenumber;
+
+      };
+      console.log(countPositive([1,-3,5]));
+      console.log(countPositive([-2,3,-5,7,10]));
     </script>
 </body>
 </html>
